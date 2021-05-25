@@ -1,0 +1,30 @@
+Started GET "/" for ::1 at 2021-05-24 17:57:48 -0700
+Started GET "/" for ::1 at 2021-05-24 17:57:48 -0700
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/doracobian/.rvm/gems/ruby-2.7.2/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendering /Users/doracobian/.rvm/gems/ruby-2.7.2/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/doracobian/.rvm/gems/ruby-2.7.2/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 18.1ms | Allocations: 448)
+  Rendered /Users/doracobian/.rvm/gems/ruby-2.7.2/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 18.1ms | Allocations: 491)
+Completed 200 OK in 251ms (Views: 54.6ms | ActiveRecord: 0.0ms | Allocations: 4144)
+
+
+Completed 200 OK in 142ms (Views: 54.1ms | ActiveRecord: 0.0ms | Allocations: 3947)
+
+
+Started GET "/" for ::1 at 2021-05-24 18:13:01 -0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/doracobian/.rvm/gems/ruby-2.7.2/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/doracobian/.rvm/gems/ruby-2.7.2/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 32.2ms | Allocations: 333)
+Completed 200 OK in 60ms (Views: 37.4ms | ActiveRecord: 0.0ms | Allocations: 2443)
+
+
+Started GET "/" for ::1 at 2021-05-24 18:13:05 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/doracobian/.rvm/gems/ruby-2.7.2/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/doracobian/.rvm/gems/ruby-2.7.2/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 25.5ms | Allocations: 215)
+Completed 200 OK in 29ms (Views: 27.3ms | ActiveRecord: 0.0ms | Allocations: 827)
+
+
