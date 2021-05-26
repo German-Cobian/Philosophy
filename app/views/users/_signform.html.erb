@@ -1,0 +1,9 @@
+<div class="">
+<%= form_with model: @user do |form| %>
+  <%= form.label :name, "Username:" %>
+  <br />
+  <%= form.text_field :name, placeholder: "Enter Name"%>
+  <br /><br />
+  <%= form.submit "Submit", class: "" %>
+<% end %>
+</div>

@@ -1,0 +1,10 @@
+<h1 class="">Sign In</h1>
+
+<%= form_for(:session, url: signin_path, method: 'post') do |f|%>
+ <div class="">
+  <p class="">
+    <%= f.text_field :name, placeholder: 'Username', class: "" %>
+  </p>
+    <%= f.submit 'Sign in', class:'button is-success is-pulled-right' %>
+ </div>
+<%end%>
