@@ -1,10 +1,14 @@
-<h1 class="">Sign In</h1>
-
-<%= form_for(:session, url: signin_path, method: 'post') do |f|%>
- <div class="">
-  <p class="">
-    <%= f.text_field :name, placeholder: 'Username', class: "" %>
-  </p>
-    <%= f.submit 'Sign in', class:'button is-success is-pulled-right' %>
- </div>
-<%end%>
+<div class="d-flex flex-row justify-content-center">
+  <div class="border my-5 pt-3 px-5">
+    <h1 class="">Sign In</h1>
+    <div class="cont-user d-flex flex-row justify-content-center">
+      <div>
+        <%= form_for(:session, url: signin_path, method: 'post') do |f|%>
+            <%= f.text_field :name, placeholder: 'Username', class: "" %>
+          <br />
+            <%= f.submit 'Sign in', class:'' %>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-
+<p>View of articles/show</p>
 <div>
   <strong>Title:</strong>
   <%= @article.title %>
@@ -17,6 +17,24 @@
 <div>
   <strong>Author:</strong>
   <%= @article.creator.name %>
+</div>
+
+<div>
+  <span>
+  <%= button_to "Upvote", vote_path, params: {:id => @article.id}, method: :post, class: "" %>
+  <%= @article.votes.count %>
+  </span>
+</div>
+
+<div>
+  <span>
+  <i class=""></i>
+  </span>
+  <span>
+  <% if current_user %>
+    <%= voted_user %>
+  <% end %>
+  </span>
 </div>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
