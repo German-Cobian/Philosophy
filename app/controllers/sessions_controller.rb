@@ -10,12 +10,16 @@ class SessionsController < ApplicationController
 
     if @user 
       session[:user_id] = @user.id
-      flash[:notice] = "Welcome! #{@user.name}, you have signed in sucessfully"
-      redirect_to root_path
+      redirect_to root_path, notice: "Logged in!"
     else
-      flash.now[:alert] = 'User does not exist, Sign up Please!!!'
+      flash.now.alert = 'User does not exist, Sign up Please!!!'
       render :new
     end
   end
   # rubocop:enable Style/SafeNavigation
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_path, notice: "Logged out!"
+  end
 end

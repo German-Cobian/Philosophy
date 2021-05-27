@@ -3,7 +3,8 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.all.most_recent_by_category
+  
   end
 
   # GET /articles/1 or /articles/1.json
@@ -13,6 +14,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
+    @categories = Category.all
   end
 
   # GET /articles/1/edit
@@ -23,12 +25,10 @@ class ArticlesController < ApplicationController
   def create
     @article = current_user.articles.build(article_params)
 
-    if @article.save
-      flash[:notice] = 'Article created Sucessfully'
-      redirect_to article_path(@article)
+    if @article.save 
+      redirect_to article_path(@article), notice: 'Article created'
     else
-      flash.now[:alert] = 'Article not created for some reasons'
-      render :new
+      render :new, notice: 'Article could not be created'
     end   
   end
 
@@ -36,7 +36,7 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: "Article was successfully updated." }
+        format.html { redirect_to @article, notice: "Article was updated." }
         format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -48,20 +48,18 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1 or /articles/1.json
   def destroy
     @article.destroy
-    respond_to do |format|
-      format.html { redirect_to articles_url, notice: "Article was successfully destroyed." }
-      format.json { head :no_content }
+    redirect_to articles_path, notice: "Article was destroyed."
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_article
-      @article = Article.find(params[:id])
-    end
-
-    # Only allow a list of trusted parameters through.
-    def article_params
-      params.require(:article).permit(:title, :text, :user_id)
-    end
+private
+# Use callbacks to share common setup or constraints between actions.
+def set_article
+  @article = Article.find(params[:id])
 end
+
+# Only allow a list of trusted parameters through.
+def article_params
+  params.require(:article).permit(:title, :text, :category_id)
+end
+

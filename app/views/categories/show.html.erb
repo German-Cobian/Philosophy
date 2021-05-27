@@ -1,0 +1,14 @@
+<div class="">
+<p><%= @category.articles.all.count %></p>
+  <% @category.articles.order('created_at DESC').each do |article|%>
+    <article class="">
+      <div class="">
+        <p class=""><%= @category.name %></p>
+        <p><%= article.title %></p>
+        <p><%= truncate article.text, length: 150 %></p>
+        <p><%= link_to 'Read More', article_path(article), class: "" %></p>  
+      </div>   
+    </article>
+  <% end %>
+</div>
+

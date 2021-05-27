@@ -1,19 +1,24 @@
-<p id="notice"><%= notice %></p>
 
-<p>
+<div>
   <strong>Title:</strong>
   <%= @article.title %>
-</p>
+</div>
 
-<p>
+<div>
+  <strong>Category:</strong>
+  <%= @article.category.name%>
+</div>
+
+<div>
   <strong>Text:</strong>
   <%= @article.text %>
-</p>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @article.user_id %>
-</p>
+<div>
+  <strong>Author:</strong>
+  <%= @article.creator.name %>
+</div>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
+

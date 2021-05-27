@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  root 'articles#index'
+  root 'categories#index'
 
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
   resources :articles
-  post 'articles/:id', to: 'articles#create'
+  resources :categories
 
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
-  delete '/signout' => 'sessions#destroy'
+  get '/signout' => 'sessions#destroy', as: 'signout'
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

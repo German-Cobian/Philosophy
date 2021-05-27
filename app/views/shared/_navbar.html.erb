@@ -1,17 +1,18 @@
-<div class="d-flex flex-row justify-content-around bg-danger">
+<div class="d-flex flex-row justify-content-around border-bottom">
 
   <div class="">
-    <%= link_to root_path do %>
-      <h5 class=""> Philosopher <span class="">&#183;</span></h5>
-    <% end %>    
+    <h5 class=""> Philosopher <span class="">&#183;</span></h5>
   </div>
 
   <div class="d-flex flex-row justify-content-between">
-    <p>Home</p>
-    <p>Metaphysics</p>
-    <p>Gnoseology</p>
-    <p>Ethics</p>
-    <p>Aesthetics</p>
+    <div class="txt-orange">
+    <%= link_to("Home", root_path, class: "link") %>
+    </div>
+    <div>
+      <% Category.all.each do |category| %>
+        <%= link_to category.name, category %>
+      <% end %>
+    </div>
   </div>
 
   <div class="d-flex flex-row">
@@ -29,7 +30,7 @@
       </p>
 
       <p class="">
-        <%= link_to "Sign Out", session_path(session[:user_id]), method: :delete, class:"" %>
+        <%= link_to "Sign Out", signout_path(session[:user_id]), method: :delete, class:"" %>
       </p>
 
 
