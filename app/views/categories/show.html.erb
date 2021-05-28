@@ -1,14 +1,18 @@
-<div class="">
-<p>view of categories/show</p>
-  <% @category.articles.order('created_at DESC').each do |article|%>
-    <article class="">
-      <div class="">
-        <p class=""><%= @category.name %></p>
-        <p><%= article.title %></p>
-        <p><%= truncate article.text, length: 150 %></p>
-        <p><%= link_to 'Read More', article_path(article), class: "" %></p>  
-      </div>   
-    </article>
-  <% end %>
+
+<% @category.articles.order('created_at DESC').each do |article|%>
+    <div class="">
+  <div class="">
+    <div class="">
+    <%= image_tag(article.image, height:50, width: 40) if article.image.attached? %> 
+    </div>
+    <div class="contained">
+      <p class=""><%= @category.name %></p>
+      <p><%= article.title %></p>
+      <p><%= truncate article.text, length: 150 %></p>
+      <p><%= link_to 'Read More', article_path(article), class: "" %></p> 
+    <div>
+  </div>
 </div>
+<% end %>
+  
 

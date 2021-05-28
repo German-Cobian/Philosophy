@@ -52,28 +52,11 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def votes
-    @vote = Vote.create(user_id: session[:user_id], article_id: params[:id])
-
-    if @vote.save
-      redirect_to article_path, notice: "Upvoted"
-    else
-      flash.now[:alert] = 'Can not upvote this article'
-      render :show
-    end
-  end
-
-  def downvote
-    @vote = Vote.find_by(user_id: session[:user_id], article_id: params[:id])
-    @vote.destroy
-    redirect_to article_path, notice: "Downvoted"
-  end
-
 private
 
 # Only allow a list of trusted parameters through.
 def article_params
-  params.require(:article).permit(:title, :text, :category_id)
+  params.require(:article).permit(:title, :text, :image, :category_id)
 end
 
 # Use callbacks to share common setup or constraints between actions.

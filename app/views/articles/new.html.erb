@@ -1,5 +1,9 @@
-<h1>New Article</h1>
-
-<%= render 'form', article: @article, categories: @categories %>
-
-<%= link_to 'Back', articles_path %>
+<div class="d-flex flex-row justify-content-center pt-3 mb-4">
+  <div>
+    <h1>New Article</h1>
+    <div class="d-flex flex-row justify-content-center border px-4">
+        <%= render 'form', article: @article, categories: @categories %>
+    </div>
+      <%= link_to 'Back', articles_path %>
+  </div>
+</div>

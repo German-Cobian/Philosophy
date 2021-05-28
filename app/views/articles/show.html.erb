@@ -1,42 +1,41 @@
-<p>View of articles/show</p>
-<div>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</div>
+<div class="cont2-art bg-secondary">
+  <div class="d-flex flex-row justify-content-center pt-5">
+    <div class="border bg-light px-5 py-4">
+      
+    <div class="d-flex flex-column">
+        <strong>Title:</strong>
+        <%= @article.title %>
+      </div>
 
-<div>
-  <strong>Category:</strong>
-  <%= @article.category.name%>
-</div>
+      <div class="d-flex flex-column pt-3">
+        <strong>Category:</strong>
+        <%= @article.category.name%>
+      </div>
 
-<div>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</div>
+      <div class="d-flex flex-column pt-3">
+        <strong>Text:</strong>
+        <%= @article.text %>
+      </div>
 
-<div>
-  <strong>Author:</strong>
-  <%= @article.creator.name %>
-</div>
+      <div class="pt-5">
+        <strong>Author:</strong>
+        <%= @article.creator.name %>
+      </div>
 
-<div>
-  <span>
-  <%= button_to "Upvote", vote_path, params: {:id => @article.id}, method: :post, class: "" %>
-  <%= @article.votes.count %>
-  </span>
-</div>
+      <div class="pt-3">
+        <span>
+        <%= button_to "Upvote", votes_path, params: {:article_id => @article.id}, method: :post, class: "" %>
+        <span class="pt-3">Votes</span>
+        <%= @article.votes.count %>
+        </span>
+      </div>
 
-<div>
-  <span>
-  <i class=""></i>
-  </span>
-  <span>
-  <% if current_user %>
-    <%= voted_user %>
-  <% end %>
-  </span>
-</div>
+      <div class="pt-3">
+        <%= link_to 'Edit', edit_article_path(@article) %> |
+        <%= link_to 'Back', articles_path %>
+      </div>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+    </div>
+  </div>
+</div>
 

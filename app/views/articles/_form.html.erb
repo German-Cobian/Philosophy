@@ -1,32 +1,42 @@
-<%= form_for article do |form| %>
-  <% if article.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+<div class="cont1-art">
+  <div class="d-flex flex-row justify-content-center">
+    <%= form_for article do |form| %>
+      <% if article.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
 
-      <ul>
-        <% article.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <ul>
+            <% article.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_area :title %>
+      <div class="d-flex flex-column pt-3">
+        <%= form.label :title %>
+        <%= form.text_area :title %>
+      </div>
+
+      <div class="d-flex flex-column pt-3">
+        <%= form.label :text %>
+        <%= form.text_area :text %>
+      </div>
+
+      <div class="pt-3">
+        <% categoriesSelect = categories.pluck(:name, :id) %>
+        <%= form.select :category_id, categoriesSelect %>
+      </div>
+
+      <div class="d-flex flex-column pt-3">
+          <%= form.label :image %>
+          <%= form.file_field :image, class: 'mb-4 file-input' %>
+      </div>
+
+      <div class="pb-3">
+        <%= form.submit %>
+      </div>
+
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= form.label :text %>
-    <%= form.text_area :text %>
-  </div>
-
-  <div class="field">
-  <% categoriesSelect = categories.pluck(:name, :id) %>
-  <%= form.select :category_id, categoriesSelect %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
