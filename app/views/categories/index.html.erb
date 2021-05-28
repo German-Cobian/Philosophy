@@ -23,7 +23,7 @@
 
     <div class="mt-3">
       <h6 class=""><%= link_to category.name, category %></h6>
-      <%= link_to category.articles.most_by_category.limit(1).title, article_path(category.articles.most_by_category.limit(1)) %>
+      <%= link_to category.articles.most_recent_by_category.limit(1).title, article_path(category.articles.most_recent_by_category.limit(1)) %>
     </div>
   <% end %>
 </div>

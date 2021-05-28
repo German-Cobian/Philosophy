@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   resources :categories
   resources :votes
 
+  resources :articles do
+    resources :comments, only: [:index, :create]
+  end
+
   get 'votes/create'
   get 'votes/destroy'
 

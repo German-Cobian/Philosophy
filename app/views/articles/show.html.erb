@@ -22,16 +22,25 @@
         <%= @article.creator.name %>
       </div>
 
-      <div class="pt-3">
-        <span>
-        <%= button_to "Upvote", votes_path, params: {:article_id => @article.id}, method: :post, class: "" %>
-        <span class="pt-3">Votes</span>
+      <div class="mt-4">
+        <span class="pt-3">Votes:</span>
         <%= @article.votes.count %>
         </span>
+        <%= button_to "Upvote", votes_path, params: {:article_id => @article.id}, method: :post, class: "" %>
       </div>
 
+      <% if current_user %>
+        <div class=''>
+          <div class=''>
+          <%= render './comments/show' %>
+          </div>
+          <div class=''>
+            <%= render './comments/form' %>
+          </div>
+        </div>
+      <% end %>
+
       <div class="pt-3">
-        <%= link_to 'Edit', edit_article_path(@article) %> |
         <%= link_to 'Back', articles_path %>
       </div>
 

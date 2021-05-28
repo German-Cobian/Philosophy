@@ -47,6 +47,7 @@ class ArticlesController < ApplicationController
 
   # DELETE /articles/1 or /articles/1.json
   def destroy
+    @article = current_user.articles.find(params[:id])
     @article.destroy
     redirect_to articles_path, notice: "Article was destroyed."
     end

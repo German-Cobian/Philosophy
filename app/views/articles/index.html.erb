@@ -1,27 +1,44 @@
-<h1>Articles</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Text</th>
-      <th>User</th>
-      <th>Created at</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container">
+  
+  <div class="d-flex flex-row justify-content-center">
+    
+    <div class="d-flex flex-column border py-4 my-5 bg-light">
+     
+      <div class="d-flex flew-row justify-content-center">
+        <h1 class="ml-5">Articles</h1>
+      </div>
 
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.text %></td>
-        <td><%= article.creator.name %></td>
-        <td><%= time_ago_in_words(article.created_at) %><td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <div class="">
+        <% @articles.each do |article| %>
+          <div class="mx-5">
+            <div class="pt-5">
+              <strong>Title</strong>
+              <p><%= article.title %></p>
+            </div>
+
+            <div>
+              <h6>Text</h6>
+              <p><%= article.text %></p>
+            </div>
+
+            <div class="d-flex flex-row mt-5">
+              <p>Author:  </p>
+              <p><%= article.creator.name %></p>
+            </div>
+
+            <div class="d-flex flex-row">
+              <p>Created at:   </p>
+              <p><%= time_ago_in_words(article.created_at) %></p>
+            </div>
+
+            <div class="d-flex flex-row border-bottom">
+              <p class="px-2"><%= link_to 'Show', article %></p>
+            </div>
+            
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 

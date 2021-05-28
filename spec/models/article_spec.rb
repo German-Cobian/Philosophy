@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Article, type: :model do
+  
   describe 'associations tests' do
     it { should belong_to(:creator).class_name(User.name) }
     it { should belong_to(:category) }
