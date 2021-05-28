@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
-  get 'votes/create'
-  get 'votes/destroy'
   root 'categories#index'
-
+  
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
   resources :articles
   resources :categories
   resources :votes
+
+  get 'votes/create'
+  get 'votes/destroy'
 
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'

@@ -17,12 +17,11 @@ class VotesController < ApplicationController
     redirect_to article_path, notice: "Downvoted"
   end
 
-private
+  private
 
-def vote_params
-  params.permit(:article_id)
-end
-
+  def vote_params
+    params.permit(:article_id)
+  end
 end
 
 

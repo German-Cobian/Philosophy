@@ -7,6 +7,4 @@ module ApplicationHelper
       User.find_by_id(session[:user_id]).name.to_s
     end
   end
-
-
 end
