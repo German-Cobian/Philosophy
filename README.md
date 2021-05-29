@@ -15,7 +15,6 @@ This is a Desktop version of a blog where the user can create articles and share
     3. A button to vote for the article of his choice (each user can vote only once).
     3. A "Read More" button that takes the reader to the article itself.
 5. When user clicks Write an article in the Navigation bar page a form with all necessary fields is displayed.
-    2. It's not in the given design, but you should make an effort to follow the same style of the other pages.
 
 ## Entity Relationship Diagram
 
@@ -23,7 +22,7 @@ This is a Desktop version of a blog where the user can create articles and share
 
 ## Live Preview
 
-https://cobian-social-media.herokuapp.com/users/sign_in
+None yet **** difficulties deploying to Heroku *****
 
 
 ## Getting Started
