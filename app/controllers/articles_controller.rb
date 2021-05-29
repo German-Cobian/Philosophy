@@ -1,15 +1,13 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: %i[ show edit update destroy ]
+  before_action :set_article, only: %i[show edit update destroy]
 
   # GET /articles or /articles.json
   def index
     @articles = Article.all.most_recent_by_category
-  
   end
 
   # GET /articles/1 or /articles/1.json
-  def show
-  end
+  def show; end
 
   # GET /articles/new
   def new
@@ -18,25 +16,24 @@ class ArticlesController < ApplicationController
   end
 
   # GET /articles/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /articles or /articles.json
   def create
     @article = current_user.articles.build(article_params)
 
-    if @article.save 
+    if @article.save
       redirect_to article_path(@article), notice: 'Article created'
     else
       render :new, notice: 'Article could not be created'
-    end   
+    end
   end
 
   # PATCH/PUT /articles/1 or /articles/1.json
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: "Article was updated." }
+        format.html { redirect_to @article, notice: 'Article was updated.' }
         format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -49,9 +46,9 @@ class ArticlesController < ApplicationController
   def destroy
     @article = current_user.articles.find(params[:id])
     @article.destroy
-    redirect_to articles_path, notice: "Article was destroyed."
-    end
+    redirect_to articles_path, notice: 'Article was destroyed.'
   end
+end
 
 private
 
@@ -64,5 +61,3 @@ end
 def set_article
   @article = Article.find(params[:id])
 end
-
-

@@ -1,5 +1,4 @@
 module ApplicationHelper
-  
   def logged_in_user
     if current_user.nil?
       'Welcome'

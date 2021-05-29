@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user
-  
+
   def current_user
     return unless session[:user_id]
 
@@ -11,5 +11,4 @@ class ApplicationController < ActionController::Base
     session.delete(:user_id)
     @current_user = nil
   end
-  
 end
