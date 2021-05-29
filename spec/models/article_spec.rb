@@ -8,10 +8,5 @@ RSpec.describe Article, type: :model do
       article.title = 'strap'
       expect(article).to_not be_valid
     end
-
-    it 'is not valid if the title is more than 50 characters' do
-      article.title = 'the unbearable lightness of being undermines all the conceptual notions that can be formed of its essence'
-      expect(article).to_not be_valid
-    end
   end
 end
