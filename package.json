@@ -1,5 +1,5 @@
 {
-  "name": "baseline2-7-2",
+  "name": "philosophy",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
