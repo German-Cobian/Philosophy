@@ -23,3 +23,11 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: Baseline272_production
+  username: Baseline272
+  password: <%= ENV['BASELINE272_DATABASE_PASSWORD'] %>

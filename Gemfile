@@ -46,10 +46,6 @@ group :development do
   gem 'spring'
 end
 
-group :production do
-  gem 'pg'
-end
-
 group :test do
   gem 'rspec'
   # Adds support for Capybara system testing and selenium driver
@@ -57,6 +53,10 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+end
+
+group :production do
+  gem 'pg'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
