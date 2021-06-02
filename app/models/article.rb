@@ -4,11 +4,11 @@ class Article < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :votes, dependent: :destroy
   has_one_attached :image
-  
-  validates :title, length: { minimum: 6, maximum: 50 }, presence:true
+
+  validates :title, length: { minimum: 6, maximum: 50 }, presence: true
   validates :text, length: { minimum: 6, maximum: 2000 }, presence: true
   validates :category_id, presence: true
-  
+
   scope :most_recent_by_category, lambda {
     from(
       <<~SQL
@@ -25,5 +25,4 @@ class Article < ApplicationRecord
       SQL
     )
   }
-
 end

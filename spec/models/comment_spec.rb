@@ -10,7 +10,7 @@ RSpec.describe Comment, type: :model do
     end
 
     it 'is valid if body is between 4 and 100 characters' do
-      comment.body = "it sucks"
+      comment.body = 'it sucks'
       comment.valid?
       expect(comment.errors[:body].size).to eq(0)
     end

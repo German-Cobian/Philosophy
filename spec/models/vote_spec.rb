@@ -8,7 +8,7 @@ RSpec.describe Vote, type: :model do
       vote.user_id = nil
       expect(vote).to_not be_valid
     end
- 
+
     it 'is not valid without an article_id' do
       vote.article_id = nil
       expect(vote).to_not be_valid

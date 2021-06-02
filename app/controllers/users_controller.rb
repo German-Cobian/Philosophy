@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       redirect_to signin_path
     else
       # if could not sign up
-      flash.now[:danger] = "Could not create user"
+      flash.now[:danger] = 'Could not create user'
       render :new
     end
   end
