@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
   def new
     @article = Article.new
     @categories = Category.all
-    @categoriesSelect = @categories.pluck(:name, :id)
+    @categories_select = @categories.pluck(:name, :id)
   end
 
   # GET /articles/1/edit
@@ -28,7 +28,7 @@ class ArticlesController < ApplicationController
       redirect_to article_path(@article)
     else
       @categories = Category.all
-      @categoriesSelect = @categories.pluck(:name, :id)
+      @categories_select = @categories.pluck(:name, :id)
       flash[:danger] = 'Article could not be created'
       render :new
     end
