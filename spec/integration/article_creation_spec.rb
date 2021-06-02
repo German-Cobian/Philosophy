@@ -13,8 +13,7 @@ RSpec.describe ArticlesController, type: :controller do
       sleep(1)
       User.create(id: 1000, name: 'German')
       post :create, params: { 'article' => {
-        'title' => 'Test article', 'text' => 'Test article body', 'category_id' => '1' } 
-        },
+        'title' => 'Test article', 'text' => 'Test article body', 'category_id' => '1' }},
                     session: { user_id: 1 }
       sleep(1)
       expect(response).to be_ok
