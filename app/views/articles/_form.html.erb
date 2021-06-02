@@ -24,8 +24,7 @@
       </div>
 
       <div class="pt-3">
-        <% categoriesSelect = categories.pluck(:name, :id) %>
-        <%= form.select :category_id, categoriesSelect %>
+        <%= form.select :category_id, @categoriesSelect %>
       </div>
 
       <div class="d-flex flex-column pt-3">
@@ -40,3 +39,5 @@
     <% end %>
   </div>
 </div>
+
+

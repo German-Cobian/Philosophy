@@ -10,13 +10,14 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path, notice: 'Logged in!'
     else
-      flash.now.alert = 'User does not exist, Sign up Please!!!'
+      flash.now[:danger] = 'User does not exist!'
       render :new
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path, notice: 'Logged out!'
+    flash.now[:success] = 'Logged out!'
+    redirect_to root_path
   end
 end

@@ -12,6 +12,11 @@
 
   <body>
   <%= render './shared/navbar' %>
+  <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %> alert-dismissible fade show" role="alert">
+      <%= content_tag(:div, message) %>
+    </div>
+  <% end %>
   <div class ="">
     <%= yield %>
   </div>

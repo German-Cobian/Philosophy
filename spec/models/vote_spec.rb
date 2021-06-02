@@ -1,8 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe Vote, type: :model do
-  describe 'Associations' do
-    it { should belong_to(:user).class_name('User') }
-    it { should belong_to(:article).class_name('Article') }
+  subject(:vote) { Vote.new(user_id: 2, article_id: 6) }
+
+  describe 'validations tests' do
+    it 'is not valid without a user_id' do
+      vote.user_id = nil
+      expect(vote).to_not be_valid
+    end
+ 
+    it 'is not valid without an article_id' do
+      vote.article_id = nil
+      expect(vote).to_not be_valid
+    end
   end
 end

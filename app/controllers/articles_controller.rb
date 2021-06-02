@@ -13,19 +13,27 @@ class ArticlesController < ApplicationController
   def new
     @article = Article.new
     @categories = Category.all
+    @categoriesSelect = @categories.pluck(:name, :id)
   end
 
   # GET /articles/1/edit
-  def edit; end
+  def edit; 
+
+
+  end
 
   # POST /articles or /articles.json
   def create
     @article = current_user.articles.build(article_params)
 
     if @article.save
-      redirect_to article_path(@article), notice: 'Article created'
+      flash.now[:success] = 'Article created'
+      redirect_to article_path(@article)
     else
-      render :new, notice: 'Article could not be created'
+      @categories = Category.all
+      @categoriesSelect = @categories.pluck(:name, :id)
+      flash[:danger] = 'Article could not be created'
+      render :new
     end
   end
 

@@ -45,9 +45,10 @@ To get a local copy up and running follow these simple example steps:
 * Navigate to a directory of your choosing using the `cd` command
 * Run this command in your OS terminal: `git@github.com:German-Cobian/Philosophy.git` to get a copy of the project
 * Navigate to the project's directory using the `cd` command
-* Migrate the database to your environment by running `rails db:migrate`
+* Migrate the database to your environment and seed the app with data that is pre-packaged for its pages to display by running`rails db:setup`
 * Run `rails webpacker:install` to configure Webpacker for your environment. Otherwise, an error like `Webpacker::Manifest::MissingEntryError` will appear if you attempt to run the server.
 * Install dependencies by running `bundle install`
+* Copy `validates :image, presence: true` into `app/models/article.rb` (this validation does not allow the article database to be seeded if it is in place before running `rails db:setup`)
 * Execute `rails server` to fire up the server
 * Visit `http://localhost:3000/` in your browser to get into the app
 * Interact with the app using the links in the nav bar. To access private pages, sign up by clicking the `Sign Up` link

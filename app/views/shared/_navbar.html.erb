@@ -1,6 +1,6 @@
-<div class="d-flex flex-row justify-content-around align-items-center mt-3 border-bottom">
+<div class="d-flex flex-row justify-content-around align-items-center mt-2 border-bottom">
 
-  <div class="mb-3">
+  <div class="mb-2">
     <h5 class=""> Philosopher <span class="">&#183;</span></h5>
   </div>
 
@@ -10,12 +10,12 @@
     </div>
     <div class="px-2">
       <% Category.all.each do |category| %>
-        <%= link_to category.name, category %>
+        <small><%= link_to category.name, category %></small>
       <% end %>
     </div>
   </div>
 
-  <div class="d-flex flex-row mb-3">
+  <div class="d-flex flex-row mb-2">
 
     <% if current_user %>
 

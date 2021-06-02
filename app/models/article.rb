@@ -4,8 +4,26 @@ class Article < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :votes, dependent: :destroy
   has_one_attached :image
-  validates :title, :text, :category_id, presence: true
-  validates :title, length: { minimum: 6, maximum: 50 }
+  
+  validates :title, length: { minimum: 6, maximum: 50 }, presence:true
+  validates :text, length: { minimum: 6, maximum: 2000 }, presence: true
+  validates :category_id, presence: true
+  
+  scope :most_recent_by_category, lambda {
+    from(
+      <<~SQL
+        (
+          SELECT articles.*
+          FROM articles JOIN (
+            SELECT category_id, max(created_at) AS created_at
+            FROM articles
+            GROUP BY category_id
+          ) latest_by_category
+          ON articles.created_at = latest_by_category.created_at
+          AND articles.category_id = latest_by_category.category_id
+        ) articles
+      SQL
+    )
+  }
 
-  scope :most_recent_by_category, -> { order(created_at: :desc) }
 end
