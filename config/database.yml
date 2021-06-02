@@ -28,6 +28,6 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  database: Baseline272_production
-  username: Baseline272
-  password: <%= ENV['BASELINE272_DATABASE_PASSWORD'] %>
+  database: philosophy_production
+  username: philosophy
+  password: <%= ENV['PHILOSOPHY_DATABASE_PASSWORD'] %>
