@@ -22,7 +22,7 @@ This is a Desktop version of a blog where the user can create articles and share
 
 ## Live Preview
 
-None yet **** difficulties deploying to Heroku *****
+https://infinite-brook-64209.herokuapp.com/
 
 
 ## Getting Started
