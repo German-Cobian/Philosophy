@@ -54,7 +54,6 @@ To get a local copy up and running follow these simple example steps:
 * If you obtain the error `ArgumentError in Categories#index` it means that the app did not get successfully seeded. Run `rails db:reset` to get it seeded
 * Copy `validates :image, presence: true` into `app/models/article.rb` (this validation does not allow the article database to be seeded if it is in place before running `rails db:seed`)
 * Interact with the app using the links in the nav bar. To access private pages, sign up by clicking the `Sign Up` link
-* Interact with the app
 * To close the server, enter `Ctrl + C` in your terminal
 
 
