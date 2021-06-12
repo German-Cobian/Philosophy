@@ -1,0 +1,9 @@
+<div class="py-4">
+  <h5>Comments</h5>
+  <% @article.comments.each do |comment| %>
+    <div class="">
+      <p class=""><%= comment.body %></p>
+      <p class=""><%= time_ago_in_words(comment.created_at) %> ago</p>
+    </div>
+  <% end %>
+</div>

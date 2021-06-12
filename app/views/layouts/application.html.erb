@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Philosophy</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <%= render './shared/navbar' %>
+  <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %> alert-dismissible fade show" role="alert">
+      <%= content_tag(:div, message) %>
+    </div>
+  <% end %>
+  <div class ="">
+    <%= yield %>
+  </div>
+  <footer><%= render './shared/footer' %></footer>
+
+ </body>
+</html>

@@ -1,0 +1,17 @@
+<div class="d-flex flex-wrap justify-content-center">
+  <% @category.articles.order('created_at DESC').each do |article|%>
+    <div class="contained d-flex flex-row border ml-2">
+      <div class="">
+        <%= image_tag(article.image, height: 245, width: 297) if article.image.attached? %> 
+      </div>
+      <div class="px-2 pt-2">
+        <h6 class="txt-orange"><%= @category.name %></h6>
+        <h6><%= article.title %></h6>
+        <p><%= truncate article.text, length: 150 %></p>
+        <p class=""><%= link_to 'Read More', article_path(article), class: "txt-orange" %></p> 
+      </div>
+    </div>
+  <% end %>
+</div>
+  
+
