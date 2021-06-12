@@ -1,0 +1,26 @@
+// Place all the styles related to the Categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.cont1-ind {
+  height: 250px;
+}
+
+.cont2-ind {
+  height: 250px;
+}
+
+.image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  margin: 0;
+  padding: 0;
+}
+
+.contained {
+  height: 245px;
+  width: 49%;
+}

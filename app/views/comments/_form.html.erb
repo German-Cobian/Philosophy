@@ -1,0 +1,12 @@
+<%= form_for([@article, @article.comments.build]) do |f| %>
+  <div class=''>
+    <div class="d-flex flex-row">
+      <span>Comments:</span>
+      <%= @article.comments.count %>
+    </div>
+    <p class=''>
+      <%= f.text_area :body, placeholder: 'Comment', size: "40x1",class:'' %>
+    </p>
+    <%= f.submit class:''%>
+  </div>
+<% end %>

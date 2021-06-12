@@ -1,0 +1,35 @@
+<div class="d-flex flex-row justify-content-center">
+  <% popular = Vote.popular %>
+  <% popular.each do |vote| %>
+    <div class="">
+        <div>
+        <%= image_tag(vote.article.image, height: 300, width: 1210) if vote.article.image.attached? %>
+        </div>
+        <div class="mx-5">
+          <h6 class="txt-orange"><%= vote.article.title %></h6>
+          <small><p><%= vote.article.text %></p></small>
+          <small><p><%= link_to 'Read more', article_path(vote.article), class: "small-anchor" %></p></small>
+        </div>
+      </div>
+    </div>
+  <%end%>
+</div>
+
+
+<div class="d-flex flex-row">
+  <% categories = Category.includes(:most_recent_article).all%>
+  <% categories.each do |category|%>
+    <div class="d-flex flex-column border">
+      <div>
+        <h6 class="px-2"><%= link_to category.name, category %></h6>
+      </div>
+      <div>
+        <%= link_to image_tag(category.most_recent_article&.image, height: 200, width: 297), category_path(category)%>
+      </div>
+      <div>
+        <small><p class="px-2"><%= link_to category.most_recent_article&.title, class:"" %></p></small>
+      </div>
+    </div>
+  <% end %>
+</div>
+
