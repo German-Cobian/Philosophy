@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# "Philosopher Website
+# Philosopher Website
 
 This is a Desktop version of a blog where the user can create articles and share articles relating to the main four topics in Philosophy (Metaphysics, Gnoseology, Logic and Ethics).
 
@@ -11,7 +11,7 @@ This is a Desktop version of a blog where the user can create articles and share
     3. A list of all categories in order of priority. Each category is displayed as a square with its name on the top and its most recent article's title in the bottom. The background image is that of the most recent article in this category.
 3. When the user clicks the category name they can see all articles in that category:
     1. Articles are sorted by most recent.
-    2. Each article displays: image, title, truncated text as preview and its **author name**.
+    2. Each article displays: image, title, truncated text as preview and its author name.
     3. A button to vote for the article of his choice (each user can vote only once).
     3. A "Read More" button that takes the reader to the article itself.
 5. When user clicks Write an article in the Navigation bar page a form with all necessary fields is displayed.
@@ -62,7 +62,7 @@ To get a local copy up and running follow these simple example steps:
 👤 **German Cobian**
 
 * GitHub: [@German-Cobian](https://github.com/German-Cobian)
-* Twitter: [@GermanCobian3](https://twitter.com/GermanCobian3)
+* Twitter: [@GermanCobian1](https://twitter.com/GermanCobian1)
 * LinkedIn: [@german-cobian](https://www.linkedin.com/in/german-cobian/)
 
 
@@ -78,9 +78,9 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-* Microverse
+Guidelines for this project supplied by Microverse.
 
 
 ## 📝 License
 
-This project is [MIT](https://github.com/German-Cobian/Re-former/blob/re-former-feature/LICENSE) licensed.# README
+This project is [MIT](https://github.com/German-Cobian/Re-former/blob/re-former-feature/LICENSE) licensed.
